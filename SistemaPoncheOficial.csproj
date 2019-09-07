@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{624A0890-8D76-4792-97F8-F219E8FECE0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>sistemaPoncheOficial</RootNamespace>
+    <AssemblyName>sistemaPoncheOficial</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.9.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.9.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccessConnectionController.cs" />
+    <Compile Include="Controllers\AreaDocenteController.cs" />
+    <Compile Include="Controllers\ConexionDB.cs" />
+    <Compile Include="Controllers\DocentesController.cs" />
+    <Compile Include="Controllers\ModalidadContratoController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
+    <Compile Include="Controllers\PoncheDocenteController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Models\AreaDocenteModel.cs" />
+    <Compile Include="Models\DocentesModel.cs" />
+    <Compile Include="Models\ModalidadContratoModel.cs" />
+    <Compile Include="Models\PersonasModel.cs" />
+    <Compile Include="Models\PoncheDocenteModel.cs" />
+    <Compile Include="Models\UsuariosModel.cs" />
+    <Compile Include="Views\AreaDocentes\AreasDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AreaDocentes\AreasDocentes.Designer.cs">
+      <DependentUpon>AreasDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AreaDocentes\DetalleArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AreaDocentes\DetalleArea.Designer.cs">
+      <DependentUpon>DetalleArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AreaDocentes\NuevaArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AreaDocentes\NuevaArea.Designer.cs">
+      <DependentUpon>NuevaArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Docentes\DetalleDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Docentes\DetalleDocente.Designer.cs">
+      <DependentUpon>DetalleDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Docentes\Docentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Docentes\Docentes.Designer.cs">
+      <DependentUpon>Docentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Docentes\NuevoDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Docentes\NuevoDocente.Designer.cs">
+      <DependentUpon>NuevoDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Loging\LoginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Loging\LoginUsuario.Designer.cs">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Loging\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Loging\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuPrincipal\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuPrincipal\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\DetallesModalidadContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\DetallesModalidadContrato.Designer.cs">
+      <DependentUpon>DetallesModalidadContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\ModalidadesDeContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\ModalidadesDeContrato.Designer.cs">
+      <DependentUpon>ModalidadesDeContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\NuevaModalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModalidadesContratos\NuevaModalidad.Designer.cs">
+      <DependentUpon>NuevaModalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Personas\DetallesPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Personas\DetallesPersona.Designer.cs">
+      <DependentUpon>DetallesPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Personas\NuevaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Personas\NuevaPersona.Designer.cs">
+      <DependentUpon>NuevaPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Personas\Personas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Personas\Personas.Designer.cs">
+      <DependentUpon>Personas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PoncheDocente\PoncheDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PoncheDocente\PoncheDocente.Designer.cs">
+      <DependentUpon>PoncheDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\DetalleUsuarioOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\DetalleUsuarioOld.Designer.cs">
+      <DependentUpon>DetalleUsuarioOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\NuevoUsuarioOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\NuevoUsuarioOld.Designer.cs">
+      <DependentUpon>NuevoUsuarioOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\FormUsuariosOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UsuariosOld\FormUsuariosOld.Designer.cs">
+      <DependentUpon>FormUsuariosOld.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\AreaDocentes\AreasDocentes.resx">
+      <DependentUpon>AreasDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AreaDocentes\DetalleArea.resx">
+      <DependentUpon>DetalleArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AreaDocentes\NuevaArea.resx">
+      <DependentUpon>NuevaArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Docentes\DetalleDocente.resx">
+      <DependentUpon>DetalleDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Docentes\Docentes.resx">
+      <DependentUpon>Docentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Docentes\NuevoDocente.resx">
+      <DependentUpon>NuevoDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Loging\LoginUsuario.resx">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Loging\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuPrincipal\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModalidadesContratos\DetallesModalidadContrato.resx">
+      <DependentUpon>DetallesModalidadContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModalidadesContratos\ModalidadesDeContrato.resx">
+      <DependentUpon>ModalidadesDeContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModalidadesContratos\NuevaModalidad.resx">
+      <DependentUpon>NuevaModalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Personas\DetallesPersona.resx">
+      <DependentUpon>DetallesPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Personas\NuevaPersona.resx">
+      <DependentUpon>NuevaPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Personas\Personas.resx">
+      <DependentUpon>Personas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PoncheDocente\PoncheDocente.resx">
+      <DependentUpon>PoncheDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UsuariosOld\DetalleUsuarioOld.resx">
+      <DependentUpon>DetalleUsuarioOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UsuariosOld\NuevoUsuarioOld.resx">
+      <DependentUpon>NuevoUsuarioOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UsuariosOld\FormUsuariosOld.resx">
+      <DependentUpon>FormUsuariosOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fdc32aec347b7ecbc578dd88597ba74d--wallpapers-ipad-iphone--wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-docentes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculoDocenteLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadoraDocente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\herramientas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Volver logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verdeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_user-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modificarDocenteLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrarUSerLOGo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insertUSEr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackLlgoo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backHistorialDocente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-calculoDocente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stopwatch_Timer-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\565654.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
